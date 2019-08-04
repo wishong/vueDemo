@@ -23,11 +23,19 @@ Vue.filter('dataFormat',function(dataStr,pattern="YYYY-MM-DD HH:MM:SS"){
 })
 
 //按需导入Mint-ui组件
-import { Header, Swipe, SwipeItem,button } from 'mint-ui'
-Vue.component(Header.name, Header)
-Vue.component(Swipe.name, Swipe)
-Vue.component(SwipeItem.name, SwipeItem)
-Vue.component(button.name, button)
+// import { Header, Swipe, SwipeItem,button,Lazyload } from 'mint-ui'
+// Vue.component(Header.name, Header)
+// Vue.component(Swipe.name, Swipe)
+// Vue.component(SwipeItem.name, SwipeItem)
+// Vue.component(button.name, button)
+// Vue.use(Lazyload)
+import MintUi from 'mint-ui'
+Vue.use(MintUi)
+import 'mint-ui/lib/style.css'
+
+//安装图片预览插件 (缩率图)
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
 
 
 
@@ -45,3 +53,4 @@ var vm = new Vue({
     render: c => c(app),
     router //1.4挂载路由对象
 })
+

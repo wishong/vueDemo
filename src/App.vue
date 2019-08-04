@@ -6,9 +6,9 @@
     <mt-header fixed title="测试"></mt-header>
     <!-- router-view区域 -->
 
-	<transition>
-		<router-view></router-view>
-	</transition>
+    <transition>
+      <router-view></router-view>
+    </transition>
 
     <!-- tabbar区域 -->
     <nav class="mui-bar mui-bar-tab">
@@ -21,7 +21,7 @@
 				<span class="mui-tab-label">会员</span>
 			</router-link>
 			<router-link class="mui-tab-item-llb" to="/shopcar">
-				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">0</span></span>
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">0</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
 			<router-link class="mui-tab-item-llb" to="/search">
@@ -87,5 +87,9 @@
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.mint-header{
+  z-index: 99;
 }
 </style>
