@@ -28,12 +28,12 @@
                         销售价: <span class="now_price">¥ {{ infolist.sell_price }}</span>
                     </p>
                     <p>
-                        <p>购买数量:<numbox></numbox></p>
+                        <p>购买数量:<numbox @Getcount="SelectGetCount" 
+                        :max="infolist.stock_quantity"></numbox></p>
                         <p>
                             <mt-button type="primary" size="small">立即购买</mt-button>
                             <mt-button type="danger" size="small" @click="AddToCar">加入购物车</mt-button>
                         </p>
-                    </p>
                 </div>
             </div>
         </div>
@@ -67,7 +67,8 @@ export default {
             id: this.$route.params.id,
             imglist: [],
             infolist: [],
-            BallFlag: false
+            BallFlag: false,
+            selectCount: 1 //默认购物车数量为1
         }
     },
     created(){
@@ -98,6 +99,14 @@ export default {
          },
          AddToCar(){
              this.BallFlag =! this.BallFlag
+             //拼接出要保存到 store 的商品信息
+             var goodsinfo = {
+                 id: this.id,
+                 count: this.selectCount,
+                 price: this.infolist.sell_price,
+                 selected: true 
+             };
+             this.$store.commit('AddToCart',goodsinfo)
          },
          beforeEnter(el){
               el.style.transform = "translate(0,0)"
@@ -114,13 +123,15 @@ export default {
 
              el.offsetWidth;
              el.style.transform = `translate(${ xDist }px, ${ yDist }px)`
-             el.style.transition = 'all 1s cubic-bezier(1,1,.79,.95)'
+             el.style.transition = 'all 0.6s cubic-bezier(1,1,.79,.95)'
              done()
          },
          afterEnter(el){
              this.BallFlag = !this.BallFlag
+         },
+         SelectGetCount(count){
+             this.selectCount = count;
          }
-         
     },
     components:{
         swiper,
