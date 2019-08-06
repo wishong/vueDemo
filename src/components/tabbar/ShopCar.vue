@@ -34,7 +34,7 @@
                       {{ $store.getters.getGoodsCountAndAmount.count }}</span>件，
                       总计 <span class="red">￥{{ $store.getters.getGoodsCountAndAmount.amount }}</span>元</p>
               </div>
-           <mt-button type="danger" >结算</mt-button>
+           <mt-button type="danger" @click="toast">结算</mt-button>
           </div>
         </div>
       </div>
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import { Toast } from "mint-ui";
 import numbox from '../subcomponents/ShopCart_numbox.vue'
 
 export default {
@@ -74,6 +75,12 @@ export default {
         },
         selectedChanged(id,val){ //按钮
             this.$store.commit("Selected",{ id,selected:val })
+        },
+        toast(){//点击结算按钮
+            Toast({
+                message: "暂时没有结算~",
+                duration: 1000
+            })
         }
     },
     components: {
