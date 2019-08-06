@@ -1,7 +1,7 @@
 <template>
     <div class="goods-list">
         <router-link class="goods-item" v-for="item in goodslist" 
-        :key="item.id" :to="'/home/goodsinfo/' + item.id" tag="div">
+        :key="item.id" :to="'/goodslist/goodsinfo/' + item.id" tag="div">
             <img :src="item.img_url" alt="图片加载不出来!">
             <h1 class="item-title">{{ item.title }}</h1>
             <div class="info">
