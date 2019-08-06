@@ -33,7 +33,6 @@ var router = new VueRouter({
     //编程式跳转
     { path:'/goodslist/goodsdesc/:id' , component: GoodsDesc , name: 'goodsdesc'},
     { path:'/goodslist/goodscomment/:id' , component: GoodsComment , name: 'goodscomment'}
-    
   ],
   linkActiveClass:'mui-active' //默认覆盖路由高亮的类默认叫做router-link-active
 })
