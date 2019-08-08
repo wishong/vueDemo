@@ -17,7 +17,3 @@
  - 图片分享
  - 商品购买
  - 购物车功能
- ## 感谢
-
- - 分享的接口的朋友 项目使用的接口：`http://www.liulongbin.top:3005` 
- - b站vue黑马教程：`https://www.bilibili.com/video/av50680998/`
