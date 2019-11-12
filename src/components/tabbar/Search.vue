@@ -1,14 +1,11 @@
 <template>
-    <h3>s</h3>
+  <h3>s</h3>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 <style>
-
 </style>
 

@@ -62,7 +62,7 @@ img{
     border: none;
 }
 .mui-grid-view.mui-grid-9 .mui-table-view-cell {
-    margin: 70px 10px 20px 30px;
+    margin: 60px 10px 20px 30px;
     padding: 0;
     border:none;
 }

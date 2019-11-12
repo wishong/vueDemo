@@ -17,6 +17,7 @@ import AboutUs from './components/about/AboutUs.vue'
 
 
 var router = new VueRouter({
+  mode: 'history',
   routes: [
     { path:'/' , redirect: '/home' },
     { path:'/home' , component: Home },
